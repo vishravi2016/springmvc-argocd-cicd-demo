@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Depoloyment
+kind: Deployment
 metadata:
   name: springmvc-cicd-argo
   labels:
@@ -9,14 +9,14 @@ spec:
   selector:
     matchLabels:
       app: springmvc-cicd-argo
-    template:
-      metadata:
-        labels:
-          app: springmvc-cicd-argo
-      spec:
+  template:
+    metadata:
+      labels:
+        app: springmvc-cicd-argo
+    spec:
         containers:
           - name: springmvc-cicd-argo
             image: vishravi1975/springmvc-cicd-argo:latest
             ports:
-              -containerPort: 8080
+              - containerPort: 8080
           
